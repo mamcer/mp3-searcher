@@ -1,50 +1,41 @@
+using System.Collections.Generic;
 using System.Data;
 
 namespace Mp3Searcher.Model
 {
     class Mp3SearchEngine
     {
-        private static Mp3SearchEngine instance = null;
-        private NetworkReader networkReader;
+        private static Mp3SearchEngine _instance;
+        private readonly NetworkReader _networkReader;
 
-        #region constructor
-        
         public Mp3SearchEngine()
         {
-            networkReader = new NetworkReader();
+            _networkReader = new NetworkReader();
         }
-        
-        #endregion
 
-        #region properties
-        
         public static Mp3SearchEngine Instance
         {
             get
             {
-                if (instance == null)
+                if (_instance == null)
                 {
-                    instance = new Mp3SearchEngine();
+                    _instance = new Mp3SearchEngine();
                 }
 
-                return instance;
+                return _instance;
             }
         }
-
-        #endregion 
-
-        #region public methods
-
+        
         public int FullScan()
         {
             int filesAdded = 0;
-            foreach (NetworkHost nh in networkReader)
+            foreach (NetworkHost nh in _networkReader)
             {
                 //Save search state, for resume
 //                NetworkHostServiceData.Instance.SetNetworkHost(nh.HostName, nh.Path);
                 filesAdded += FileSearcher.Instance.SearchForMp3Files(nh);
-                Mp3FileCollection mp3FileCollection = FileSearcher.Instance.SearchResult;
-                mp3FileCollection.Save();
+                //List<Mp3File> mp3FileCollection = FileSearcher.Instance.SearchResult;
+                //mp3FileCollection.Save();
             }
 
 //            NetworkHostServiceData.Instance.Reset();
@@ -53,7 +44,7 @@ namespace Mp3Searcher.Model
 
         public int ResumeFullScan(string hostName)
         {
-            networkReader.ResumeFromHost(hostName);
+            _networkReader.ResumeFromHost(hostName);
             return FullScan();
         }
 
@@ -97,7 +88,5 @@ namespace Mp3Searcher.Model
 
             return mp3File;
         }
-
-        #endregion
     }
 }

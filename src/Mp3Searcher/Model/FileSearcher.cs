@@ -1,47 +1,33 @@
+using System.Collections.Generic;
 using System.IO;
 
 namespace Mp3Searcher.Model
 {
     class FileSearcher
     {
-        private Mp3FileCollection mp3FileCollection;
-        private static FileSearcher instance = null;
+        private List<Mp3File> _mp3FileCollection;
+        private static FileSearcher _instance;
 
-        #region constructor
-       
         private FileSearcher()
         {
-            mp3FileCollection = new Mp3FileCollection();
+            _mp3FileCollection = new List<Mp3File>();
         }
-        
-        #endregion
 
-        #region properties
-      
         public static FileSearcher Instance
         {
             get
             {
-                if (instance == null)
+                if (_instance == null)
                 {
-                    instance = new FileSearcher();
+                    _instance = new FileSearcher();
                 }
-                return instance;
+                
+                return _instance;
             }
         }
 
-        public Mp3FileCollection SearchResult
-        {
-            get
-            {
-                return mp3FileCollection;
-            }
-        }
-       
-        #endregion
+        public List<Mp3File> SearchResult => _mp3FileCollection;
 
-        #region public methods
-      
         private void DirectorySearch(string host, string path)
         {
             try
@@ -57,26 +43,28 @@ namespace Mp3Searcher.Model
                             {
                                 mp3File.Path = f;
                                 mp3File.Host = host;
-                                mp3FileCollection.Add(mp3File);
+                                _mp3FileCollection.Add(mp3File);
                             }
                         }
                         DirectorySearch(host, d);
                     }
-                    catch{}
+                    catch
+                    {
+                        // ignored
+                    }
                 }
             }
             catch
             {
+                // ignored
             }
         }
 
         public int SearchForMp3Files(NetworkHost nh)
         {
-            mp3FileCollection = new Mp3FileCollection();
+            _mp3FileCollection = new List<Mp3File>();
             DirectorySearch(nh.HostName, nh.Path);
-            return mp3FileCollection.Mp3Files.Count;
+            return _mp3FileCollection.Count;
         }
-
-        #endregion
     }
 }

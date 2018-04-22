@@ -93,7 +93,6 @@
     <Compile Include="Model\FileSearcher.cs" />
     <Compile Include="Model\Id3Reader.cs" />
     <Compile Include="Model\Mp3File.cs" />
-    <Compile Include="Model\Mp3FileCollection.cs" />
     <Compile Include="Model\Mp3SearchEngine.cs" />
     <Compile Include="Model\NetworkReader.cs" />
     <Compile Include="Options.cs">

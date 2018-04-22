@@ -1,32 +1,22 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
-
 namespace Mp3Searcher.Model
 {
-    class Id3Reader
+    public class Id3Reader
     {
-        private static Id3Reader instance = null;
+        private static Id3Reader _instance;
 
-        #region constructor
-        public Id3Reader() { }
-        #endregion
-
-        #region properties
         public static Id3Reader Instance
         {
             get
             {
-                if (instance == null)
+                if (_instance == null)
                 {
-                    instance = new Id3Reader();
+                    _instance = new Id3Reader();
                 }
-                return instance;
+
+                return _instance;
             }
         }
-        #endregion
 
-        #region public methods
         public Mp3File GetMp3File(string fullPath)
         {
             Mp3File mp3File = new Mp3File();
@@ -68,6 +58,5 @@ namespace Mp3Searcher.Model
             }
             return mp3File;
         }
-        #endregion
     }
 }

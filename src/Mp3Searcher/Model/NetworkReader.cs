@@ -1,6 +1,4 @@
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Collections;
 using System.Data;
 
@@ -8,44 +6,16 @@ namespace Mp3Searcher.Model
 {
     class NetworkHost
     {
-        private string hostName;
-        private string path;
-
-        #region constructor
         public NetworkHost()
         {
             HostName = string.Empty;
             Path = string.Empty;
         }
-        #endregion
 
-        #region properties
-        public string HostName
-        {
-            get
-            {
-                return hostName;
-            }
-            set
-            {
-                hostName = value;
-            }
-        }
+        public string HostName { get; set; }
 
-        public string Path
-        {
-            get
-            {
-                return path;
-            }
-            set
-            {
-                path = value;
-            }
-        }
-        #endregion
-
-        #region public methods
+        public string Path { get; set; }
+        
         public void MapData(DataRow dr)
         {
             if (dr != null)
@@ -54,69 +24,62 @@ namespace Mp3Searcher.Model
                 //path = dr[NetworkHostServiceData.PATH].ToString();
             }
         }
-        #endregion
     }
 
     class NetworkReader : IEnumerable, IEnumerator
     {
-        private int lastHostNumber;
-        private int specialFolderIndex;
-        private string[] specialFolders = { "Documents and Settings", "Music", "Musica" }; 
-
-        #region constructor
+        private int _lastHostNumber;
+        private int _specialFolderIndex;
+        private readonly string[] _specialFolders = { "Documents and Settings", "Music", "Musica" }; 
 
         public NetworkReader()
         {
-            lastHostNumber = 0;
-            specialFolderIndex = -1;
+            _lastHostNumber = 0;
+            _specialFolderIndex = -1;
         }
 
-        #endregion
-
-        #region public methods
         public bool ResetSpecialFolder()
         { 
-            if(specialFolderIndex < specialFolders.Length - 1)
+            if(_specialFolderIndex < _specialFolders.Length - 1)
             {
-                specialFolderIndex += 1;
+                _specialFolderIndex += 1;
                 return false;
             }
             else
             {
-                specialFolderIndex = 0;
+                _specialFolderIndex = 0;
                 return true;
             }
         }
 
         public string GetHostNumber()
         {
-            if (lastHostNumber < 10)
+            if (_lastHostNumber < 10)
             {
-                return "00" + lastHostNumber.ToString();
+                return "00" + _lastHostNumber.ToString();
             }
             else
             {
-                if (lastHostNumber < 100)
+                if (_lastHostNumber < 100)
                 {
-                    return "0" + lastHostNumber.ToString();
+                    return "0" + _lastHostNumber.ToString();
                 }
             }
-            return lastHostNumber.ToString();
+            return _lastHostNumber.ToString();
         }
 
         public void ResumeFromHost(string hostName)
         {
             hostName = hostName.Remove(0,4);
-            lastHostNumber = Convert.ToInt32(hostName);
-            specialFolderIndex = -1;
+            _lastHostNumber = Convert.ToInt32(hostName);
+            _specialFolderIndex = -1;
         }
-        #endregion 
-
-        #region Inumerable, IEnumerator
+        
         public IEnumerator GetEnumerator()
         {
-            return (IEnumerator)this;
+            return this;
         }
+        
         public object Current
         {
             get
@@ -124,25 +87,26 @@ namespace Mp3Searcher.Model
                 NetworkHost networkHost = new NetworkHost();
                 string hostNumber = GetHostNumber();
                 networkHost.HostName = "HXWS" + hostNumber;
-                networkHost.Path = "\\\\HXWS" + hostNumber + "\\c$\\" + specialFolders[specialFolderIndex];
+                networkHost.Path = "\\\\HXWS" + hostNumber + "\\c$\\" + _specialFolders[_specialFolderIndex];
                 return networkHost;
             }
         }
+        
         public void Dispose() { }
 
         public bool MoveNext()
         {
-            if (ResetSpecialFolder() == true)
+            if (ResetSpecialFolder())
             {
-                lastHostNumber += 1;
-                return lastHostNumber < 150;
+                _lastHostNumber += 1;
+                return _lastHostNumber < 150;
             }
             return true;
         }
+     
         public void Reset()
         {
-            lastHostNumber = 0;
+            _lastHostNumber = 0;
         }
-        #endregion
     }
 }
