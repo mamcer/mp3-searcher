@@ -5,12 +5,12 @@ namespace Mp3Searcher
 {
     public partial class Options : Form
     {
-        private DialogResult result;
+        private DialogResult _result;
 
         public Options()
         {
             InitializeComponent();
-            result = DialogResult.Cancel;
+            _result = DialogResult.Cancel;
             btnSave.Enabled = false;
             listBox1.SelectedIndex = 0;
         }
@@ -41,18 +41,18 @@ namespace Mp3Searcher
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            if (btnSave.Enabled == true)
+            if (btnSave.Enabled)
             {
-                result = DialogResult.OK;
+                _result = DialogResult.OK;
                 btnSave.Enabled = false;
             }
 
-            DialogResult = result;
+            DialogResult = _result;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            result = DialogResult.OK;
+            _result = DialogResult.OK;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)

@@ -1,4 +1,5 @@
 using System;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace Mp3Searcher
@@ -10,16 +11,15 @@ namespace Mp3Searcher
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            try
-            {
-                Application.Run(new Main());
-            }
-            catch (Exception ex)
-            {
-                ErrorForm errorForm = new ErrorForm();
-                errorForm.ErrorText = ex.StackTrace + ex.Message;
-                errorForm.ShowDialog();
-            }
+            Application.ThreadException += ApplicationOnThreadException;
+            Application.Run(new Main());
+        }
+
+        private static void ApplicationOnThreadException(object sender, ThreadExceptionEventArgs threadExceptionEventArgs)
+        {
+            ErrorForm errorForm = new ErrorForm();
+            errorForm.ErrorText = threadExceptionEventArgs.Exception.StackTrace + threadExceptionEventArgs.Exception.Message;
+            errorForm.ShowDialog();
         }
     }
 }

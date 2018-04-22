@@ -12,14 +12,9 @@ namespace Mp3Searcher
 
         public string ErrorText
         {
-            get
-            {
-                return txtError.Text;
-            }
-            set
-            {
-                txtError.Text = value;
-            }
+            get => txtError.Text;
+
+            set => txtError.Text = value;
         }
 
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
