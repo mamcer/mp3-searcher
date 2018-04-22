@@ -4,8 +4,6 @@ using System.Text;
 using System.Collections;
 using System.Data;
 
-using Mp3Searcher.Data;
-
 namespace Mp3Searcher.Model
 {
     class NetworkHost
@@ -52,8 +50,8 @@ namespace Mp3Searcher.Model
         {
             if (dr != null)
             {
-                hostName = dr[NetworkHostServiceData.HOST].ToString();
-                path = dr[NetworkHostServiceData.PATH].ToString();
+                //hostName = dr[NetworkHostServiceData.HOST].ToString();
+                //path = dr[NetworkHostServiceData.PATH].ToString();
             }
         }
         #endregion

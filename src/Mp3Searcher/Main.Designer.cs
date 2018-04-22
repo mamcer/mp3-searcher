@@ -37,6 +37,12 @@ namespace Mp3Searcher
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.lnkFullScan = new System.Windows.Forms.LinkLabel();
             this.pnlSearch = new System.Windows.Forms.Panel();
+            this.cmbSearchText = new System.Windows.Forms.ComboBox();
+            this.toolStrip = new System.Windows.Forms.ToolStrip();
+            this.btnSearch = new System.Windows.Forms.ToolStripSplitButton();
+            this.searchTitleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.searchAlbumToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.searchArtistToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lnkOptions = new System.Windows.Forms.LinkLabel();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
@@ -45,28 +51,13 @@ namespace Mp3Searcher
             this.dataGridMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStrip = new System.Windows.Forms.ToolStrip();
-            this.btnSearch = new System.Windows.Forms.ToolStripSplitButton();
-            this.searchTitleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.searchAlbumToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.searchArtistToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.idMp3FileLinkDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.getMp3FileLinkByTitleBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.nSearcherDataSet = new Mp3Searcher.NSearcherDataSet();
-            this.getMp3FileLinkByTitleTableAdapter = new Mp3Searcher.NSearcherDataSetTableAdapters.GetMp3FileLinkByTitleTableAdapter();
-            this.cmbSearchText = new System.Windows.Forms.ComboBox();
             this.notifyMenu.SuspendLayout();
             this.pnlSearch.SuspendLayout();
+            this.toolStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).BeginInit();
             this.dataGridMenu.SuspendLayout();
-            this.toolStrip.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.getMp3FileLinkByTitleBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nSearcherDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // notifyIcon
@@ -132,6 +123,64 @@ namespace Mp3Searcher
             this.pnlSearch.Size = new System.Drawing.Size(372, 67);
             this.pnlSearch.TabIndex = 4;
             // 
+            // cmbSearchText
+            // 
+            this.cmbSearchText.FormattingEnabled = true;
+            this.cmbSearchText.Location = new System.Drawing.Point(3, 14);
+            this.cmbSearchText.Name = "cmbSearchText";
+            this.cmbSearchText.Size = new System.Drawing.Size(262, 21);
+            this.cmbSearchText.TabIndex = 7;
+            this.cmbSearchText.TextChanged += new System.EventHandler(this.cmbSearchText_TextChanged);
+            this.cmbSearchText.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbSearchText_KeyDown);
+            // 
+            // toolStrip
+            // 
+            this.toolStrip.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.toolStrip.Dock = System.Windows.Forms.DockStyle.None;
+            this.toolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.toolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnSearch});
+            this.toolStrip.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
+            this.toolStrip.Location = new System.Drawing.Point(268, 12);
+            this.toolStrip.Name = "toolStrip";
+            this.toolStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.toolStrip.Size = new System.Drawing.Size(103, 25);
+            this.toolStrip.TabIndex = 6;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.searchTitleToolStripMenuItem,
+            this.searchAlbumToolStripMenuItem,
+            this.searchArtistToolStripMenuItem});
+            this.btnSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.Image")));
+            this.btnSearch.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(100, 22);
+            this.btnSearch.Text = "Search Title";
+            this.btnSearch.ButtonClick += new System.EventHandler(this.toolStripSplitButton1_ButtonClick);
+            // 
+            // searchTitleToolStripMenuItem
+            // 
+            this.searchTitleToolStripMenuItem.Name = "searchTitleToolStripMenuItem";
+            this.searchTitleToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.searchTitleToolStripMenuItem.Text = "Search Title";
+            this.searchTitleToolStripMenuItem.Click += new System.EventHandler(this.searchTitleToolStripMenuItem_Click);
+            // 
+            // searchAlbumToolStripMenuItem
+            // 
+            this.searchAlbumToolStripMenuItem.Name = "searchAlbumToolStripMenuItem";
+            this.searchAlbumToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.searchAlbumToolStripMenuItem.Text = "Search Album";
+            this.searchAlbumToolStripMenuItem.Click += new System.EventHandler(this.searchAlbumToolStripMenuItem_Click);
+            // 
+            // searchArtistToolStripMenuItem
+            // 
+            this.searchArtistToolStripMenuItem.Name = "searchArtistToolStripMenuItem";
+            this.searchArtistToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.searchArtistToolStripMenuItem.Text = "Search Artist";
+            this.searchArtistToolStripMenuItem.Click += new System.EventHandler(this.searchArtistToolStripMenuItem_Click);
+            // 
             // lnkOptions
             // 
             this.lnkOptions.AutoSize = true;
@@ -160,7 +209,7 @@ namespace Mp3Searcher
             // toolStripStatusLabel1
             // 
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(109, 17);
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(118, 17);
             this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
             // 
             // panel1
@@ -177,17 +226,10 @@ namespace Mp3Searcher
             this.dataGrid.AllowUserToAddRows = false;
             this.dataGrid.AllowUserToDeleteRows = false;
             this.dataGrid.AllowUserToResizeRows = false;
-            this.dataGrid.AutoGenerateColumns = false;
             this.dataGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idMp3FileLinkDataGridViewTextBoxColumn,
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3});
             this.dataGrid.ContextMenuStrip = this.dataGridMenu;
-            this.dataGrid.DataSource = this.getMp3FileLinkByTitleBindingSource;
             this.dataGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGrid.Location = new System.Drawing.Point(0, 0);
             this.dataGrid.MultiSelect = false;
@@ -221,111 +263,7 @@ namespace Mp3Searcher
             this.toolStripMenuItem3.Text = "File Info";
             this.toolStripMenuItem3.Click += new System.EventHandler(this.toolStripMenuItem3_Click);
             // 
-            // toolStrip
-            // 
-            this.toolStrip.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.toolStrip.Dock = System.Windows.Forms.DockStyle.None;
-            this.toolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.toolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnSearch});
-            this.toolStrip.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
-            this.toolStrip.Location = new System.Drawing.Point(268, 12);
-            this.toolStrip.Name = "toolStrip";
-            this.toolStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.toolStrip.Size = new System.Drawing.Size(98, 25);
-            this.toolStrip.TabIndex = 6;
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.searchTitleToolStripMenuItem,
-            this.searchAlbumToolStripMenuItem,
-            this.searchArtistToolStripMenuItem});
-            this.btnSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.Image")));
-            this.btnSearch.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(95, 22);
-            this.btnSearch.Text = "Search Title";
-            this.btnSearch.ButtonClick += new System.EventHandler(this.toolStripSplitButton1_ButtonClick);
-            // 
-            // searchTitleToolStripMenuItem
-            // 
-            this.searchTitleToolStripMenuItem.Name = "searchTitleToolStripMenuItem";
-            this.searchTitleToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.searchTitleToolStripMenuItem.Text = "Search Title";
-            this.searchTitleToolStripMenuItem.Click += new System.EventHandler(this.searchTitleToolStripMenuItem_Click);
-            // 
-            // searchAlbumToolStripMenuItem
-            // 
-            this.searchAlbumToolStripMenuItem.Name = "searchAlbumToolStripMenuItem";
-            this.searchAlbumToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.searchAlbumToolStripMenuItem.Text = "Search Album";
-            this.searchAlbumToolStripMenuItem.Click += new System.EventHandler(this.searchAlbumToolStripMenuItem_Click);
-            // 
-            // searchArtistToolStripMenuItem
-            // 
-            this.searchArtistToolStripMenuItem.Name = "searchArtistToolStripMenuItem";
-            this.searchArtistToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.searchArtistToolStripMenuItem.Text = "Search Artist";
-            this.searchArtistToolStripMenuItem.Click += new System.EventHandler(this.searchArtistToolStripMenuItem_Click);
-            // 
-            // idMp3FileLinkDataGridViewTextBoxColumn
-            // 
-            this.idMp3FileLinkDataGridViewTextBoxColumn.DataPropertyName = "IdMp3FileLink";
-            this.idMp3FileLinkDataGridViewTextBoxColumn.HeaderText = "IdMp3FileLink";
-            this.idMp3FileLinkDataGridViewTextBoxColumn.Name = "idMp3FileLinkDataGridViewTextBoxColumn";
-            this.idMp3FileLinkDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idMp3FileLinkDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "Artist";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Artist";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 80;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Title";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Title";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 150;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "Album";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Album";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Width = 80;
-            // 
-            // getMp3FileLinkByTitleBindingSource
-            // 
-            this.getMp3FileLinkByTitleBindingSource.DataMember = "GetMp3FileLinkByTitle";
-            this.getMp3FileLinkByTitleBindingSource.DataSource = this.nSearcherDataSet;
-            // 
-            // nSearcherDataSet
-            // 
-            this.nSearcherDataSet.DataSetName = "NSearcherDataSet";
-            this.nSearcherDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // getMp3FileLinkByTitleTableAdapter
-            // 
-            this.getMp3FileLinkByTitleTableAdapter.ClearBeforeFill = true;
-            // 
-            // cmbSearchText
-            // 
-            this.cmbSearchText.FormattingEnabled = true;
-            this.cmbSearchText.Location = new System.Drawing.Point(3, 14);
-            this.cmbSearchText.Name = "cmbSearchText";
-            this.cmbSearchText.Size = new System.Drawing.Size(262, 21);
-            this.cmbSearchText.TabIndex = 7;
-            this.cmbSearchText.TextChanged += new System.EventHandler(this.cmbSearchText_TextChanged);
-            this.cmbSearchText.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbSearchText_KeyDown);
-            // 
-            // Form1
+            // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -339,21 +277,19 @@ namespace Mp3Searcher
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Preserved Head";
-            this.Shown += new System.EventHandler(this.Form1_Shown);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.Shown += new System.EventHandler(this.Form1_Shown);
             this.notifyMenu.ResumeLayout(false);
             this.pnlSearch.ResumeLayout(false);
             this.pnlSearch.PerformLayout();
+            this.toolStrip.ResumeLayout(false);
+            this.toolStrip.PerformLayout();
             this.statusStrip.ResumeLayout(false);
             this.statusStrip.PerformLayout();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).EndInit();
             this.dataGridMenu.ResumeLayout(false);
-            this.toolStrip.ResumeLayout(false);
-            this.toolStrip.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.getMp3FileLinkByTitleBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nSearcherDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -375,9 +311,6 @@ namespace Mp3Searcher
         private System.Windows.Forms.DataGridViewTextBoxColumn artistDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn titleDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn albumDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource getMp3FileLinkByTitleBindingSource;
-        private NSearcherDataSet nSearcherDataSet;
-        private Mp3Searcher.NSearcherDataSetTableAdapters.GetMp3FileLinkByTitleTableAdapter getMp3FileLinkByTitleTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn idMp3FileLinkDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;

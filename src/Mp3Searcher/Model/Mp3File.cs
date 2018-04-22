@@ -1,8 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Data;
-using Mp3Searcher.Data;
 
 namespace Mp3Searcher.Model
 {
@@ -39,11 +35,11 @@ namespace Mp3Searcher.Model
         {
             if (dr != null)
             {
-                Title = dr[Mp3FileServiceData.TITLE].ToString();
-                Album = dr[Mp3FileServiceData.ALBUM].ToString();
-                Artist = dr[Mp3FileServiceData.ARTIST].ToString();
-                Host = dr[Mp3FileServiceData.HOST].ToString();
-                Path = dr[Mp3FileServiceData.PATH].ToString();
+                //Title = dr[Mp3FileServiceData.TITLE].ToString();
+                //Album = dr[Mp3FileServiceData.ALBUM].ToString();
+                //Artist = dr[Mp3FileServiceData.ARTIST].ToString();
+                //Host = dr[Mp3FileServiceData.HOST].ToString();
+                //Path = dr[Mp3FileServiceData.PATH].ToString();
             }
         }
         #endregion

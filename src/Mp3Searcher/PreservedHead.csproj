@@ -47,7 +47,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <CodeAnalysisRuleSet>..\FXCop.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet>..\..\FXCop.ruleset</CodeAnalysisRuleSet>
     <RunCodeAnalysis>true</RunCodeAnalysis>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -69,9 +69,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Data\Constants.cs" />
-    <Compile Include="Data\DataServiceBase.cs" />
-    <Compile Include="Data\NetworkHostServiceData.cs" />
     <Compile Include="ErrorForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,15 +90,9 @@
     <Compile Include="Model\FileSearcher.cs" />
     <Compile Include="Model\Id3Reader.cs" />
     <Compile Include="Model\Mp3File.cs" />
-    <Compile Include="Data\Mp3FileServiceData.cs" />
     <Compile Include="Model\Mp3FileCollection.cs" />
     <Compile Include="Model\Mp3SearchEngine.cs" />
     <Compile Include="Model\NetworkReader.cs" />
-    <Compile Include="NSearcherDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>NSearcherDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Options.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -137,17 +128,6 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="App.config" />
-    <None Include="NSearcherDataSet.xsc">
-      <DependentUpon>NSearcherDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="NSearcherDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>NSearcherDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="NSearcherDataSet.xss">
-      <DependentUpon>NSearcherDataSet.xsd</DependentUpon>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

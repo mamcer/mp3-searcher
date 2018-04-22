@@ -1,4 +1,3 @@
-using Mp3Searcher.Data;
 using Mp3Searcher.Model;
 using System;
 using System.Data;
@@ -177,27 +176,27 @@ namespace Mp3Searcher
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            DataRow dr = NetworkHostServiceData.Instance.GetNetworkHost();
-            if (dr != null)
-            {
-                NetworkHost nh = new NetworkHost();
-                nh.MapData(dr);
-                if (!string.IsNullOrEmpty(nh.Path))
-                {
-                    DialogResult dialog = MessageBox.Show(this.Text + " detect that a previous Scan was not successfully finished, do you want to continue and finish this Scan?. If you press No then you will be prompted the next time you start the application, if you press Cancel the unfinished Scan will be discarded", this.Text, MessageBoxButtons.YesNoCancel);
-                    if (dialog == DialogResult.Yes)
-                    {
-                        engine.ResumeFullScan(nh.HostName);
-                    }
-                    else
-                    {
-                        if (dialog == DialogResult.Cancel)
-                        {
-                            NetworkHostServiceData.Instance.Reset();
-                        }
-                    }
-                }
-            }
+            //DataRow dr = NetworkHostServiceData.Instance.GetNetworkHost();
+            //if (dr != null)
+            //{
+            //    NetworkHost nh = new NetworkHost();
+            //    nh.MapData(dr);
+            //    if (!string.IsNullOrEmpty(nh.Path))
+            //    {
+            //        DialogResult dialog = MessageBox.Show(this.Text + " detect that a previous Scan was not successfully finished, do you want to continue and finish this Scan?. If you press No then you will be prompted the next time you start the application, if you press Cancel the unfinished Scan will be discarded", this.Text, MessageBoxButtons.YesNoCancel);
+            //        if (dialog == DialogResult.Yes)
+            //        {
+            //            engine.ResumeFullScan(nh.HostName);
+            //        }
+            //        else
+            //        {
+            //            if (dialog == DialogResult.Cancel)
+            //            {
+            //                NetworkHostServiceData.Instance.Reset();
+            //            }
+            //        }
+            //    }
+            //}
         }
 
         private void lnkOptions_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)

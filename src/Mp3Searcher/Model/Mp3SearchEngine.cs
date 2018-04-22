@@ -1,4 +1,3 @@
-using Mp3Searcher.Data;
 using System.Data;
 
 namespace Mp3Searcher.Model
@@ -42,13 +41,13 @@ namespace Mp3Searcher.Model
             foreach (NetworkHost nh in networkReader)
             {
                 //Save search state, for resume
-                NetworkHostServiceData.Instance.SetNetworkHost(nh.HostName, nh.Path);
+//                NetworkHostServiceData.Instance.SetNetworkHost(nh.HostName, nh.Path);
                 filesAdded += FileSearcher.Instance.SearchForMp3Files(nh);
                 Mp3FileCollection mp3FileCollection = FileSearcher.Instance.SearchResult;
                 mp3FileCollection.Save();
             }
 
-            NetworkHostServiceData.Instance.Reset();
+//            NetworkHostServiceData.Instance.Reset();
             return filesAdded;
         }
 
@@ -60,25 +59,28 @@ namespace Mp3Searcher.Model
 
         public DataTable SearchTitle(string title)
         {
-            return Mp3FileServiceData.Instance.SearchByTitle(title);
+//            return Mp3FileServiceData.Instance.SearchByTitle(title);
+            return null;
         }
 
         public DataTable SearchAlbum(string album)
         {
-            return Mp3FileServiceData.Instance.SearchByAlbum(album);
+//            return Mp3FileServiceData.Instance.SearchByAlbum(album);
+            return null;
         }
 
         public DataTable SearchArtist(string artist)
         {
-            return Mp3FileServiceData.Instance.SearchByArtist(artist);
+//            return Mp3FileServiceData.Instance.SearchByArtist(artist);
+            return null;
         }
 
         public string GetFilePath(int idMp3FileLink)
         {
-            DataRow dr = Mp3FileServiceData.Instance.GetMp3FileById(idMp3FileLink);
-            if (dr != null)
+//            DataRow dr = Mp3FileServiceData.Instance.GetMp3FileById(idMp3FileLink);
+//          if (dr != null)
             {
-                return dr[Mp3FileServiceData.PATH].ToString();
+//                return dr[Mp3FileServiceData.PATH].ToString();
             }
             return string.Empty;
         }
@@ -86,11 +88,11 @@ namespace Mp3Searcher.Model
         public Mp3File GetMp3File(int idMp3FileLink)
         {
             Mp3File mp3File = null;
-            DataRow dr = Mp3FileServiceData.Instance.GetMp3FileById(idMp3FileLink);
-            if (dr != null)
+//            DataRow dr = Mp3FileServiceData.Instance.GetMp3FileById(idMp3FileLink);
+//            if (dr != null)
             {
                 mp3File = new Mp3File();
-                mp3File.MapData(dr);
+//                mp3File.MapData(dr);
             }
 
             return mp3File;

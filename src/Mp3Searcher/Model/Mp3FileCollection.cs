@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Collections;
-using Mp3Searcher.Data;
 
 namespace Mp3Searcher.Model
 {
@@ -37,7 +36,7 @@ namespace Mp3Searcher.Model
         {
             foreach (Mp3File mp3File in Mp3Files)
             {
-                Mp3FileServiceData.Instance.SaveMp3(mp3File.Title, mp3File.Album, mp3File.Artist, mp3File.Host, mp3File.Path);
+//                Mp3FileServiceData.Instance.SaveMp3(mp3File.Title, mp3File.Album, mp3File.Artist, mp3File.Host, mp3File.Path);
             }
         }
         #endregion
