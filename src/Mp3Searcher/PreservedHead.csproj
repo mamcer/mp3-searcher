@@ -84,11 +84,11 @@
     <Compile Include="FileInfo.Designer.cs">
       <DependentUpon>FileInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\FileSearcher.cs" />
     <Compile Include="Model\Id3Reader.cs" />
@@ -118,9 +118,9 @@
       <SubType>Designer</SubType>
       <DependentUpon>FileInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
+    <EmbeddedResource Include="Main.resx">
       <SubType>Designer</SubType>
-      <DependentUpon>Form1.cs</DependentUpon>
+      <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Options.resx">
       <SubType>Designer</SubType>

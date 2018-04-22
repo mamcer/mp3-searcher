@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace Mp3Searcher
 {
-    public partial class Form1 : Form
+    public partial class Main : Form
     {
         private delegate void SearchMethod();
         private Mp3SearchEngine engine;
@@ -15,7 +15,7 @@ namespace Mp3Searcher
         private Options options = null;
         private SearchMethod searchMethod = null;
 
-        public Form1()
+        public Main()
         {
             InitializeComponent();
             engine = Mp3SearchEngine.Instance;
