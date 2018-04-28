@@ -1,7 +1,7 @@
 using System;
 using System.Windows.Forms;
 
-namespace Mp3Searcher
+namespace Mp3Searcher.UI
 {
     public partial class Options : Form
     {

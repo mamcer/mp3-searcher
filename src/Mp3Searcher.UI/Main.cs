@@ -1,10 +1,10 @@
-using Mp3Searcher.Model;
 using System;
 using System.Diagnostics;
 using System.Windows.Forms;
 using Mp3Searcher.Core;
+using Mp3Searcher.Model;
 
-namespace Mp3Searcher
+namespace Mp3Searcher.UI
 {
     public partial class Main : Form
     {

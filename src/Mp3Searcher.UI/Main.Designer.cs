@@ -1,4 +1,4 @@
-namespace Mp3Searcher
+namespace Mp3Searcher.UI
 {
     partial class Main
     {

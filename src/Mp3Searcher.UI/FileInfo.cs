@@ -2,7 +2,7 @@ using System;
 using System.Windows.Forms;
 using Mp3Searcher.Core;
 
-namespace Mp3Searcher
+namespace Mp3Searcher.UI
 {
     public partial class FileInfo : Form
     {

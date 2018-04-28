@@ -145,7 +145,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\PreservedHead.Core\Mp3Searcher.Core.csproj">
+    <ProjectReference Include="..\Mp3Searcher.Core\Mp3Searcher.Core.csproj">
       <Project>{1375cb07-29f4-445a-bce4-294c9b316ae5}</Project>
       <Name>Mp3Searcher.Core</Name>
     </ProjectReference>

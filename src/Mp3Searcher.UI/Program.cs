@@ -1,6 +1,7 @@
 using System;
 using System.Threading;
 using System.Windows.Forms;
+using Mp3Searcher.UI;
 
 namespace Mp3Searcher
 {
