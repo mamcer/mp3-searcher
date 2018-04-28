@@ -1,31 +1,9 @@
 using System;
 using System.Collections;
-using System.Data;
+using Mp3Searcher.Core;
 
-namespace Mp3Searcher.Model
+namespace Mp3Searcher.UI.Model
 {
-    class NetworkHost
-    {
-        public NetworkHost()
-        {
-            HostName = string.Empty;
-            Path = string.Empty;
-        }
-
-        public string HostName { get; set; }
-
-        public string Path { get; set; }
-        
-        public void MapData(DataRow dr)
-        {
-            if (dr != null)
-            {
-                //hostName = dr[NetworkHostServiceData.HOST].ToString();
-                //path = dr[NetworkHostServiceData.PATH].ToString();
-            }
-        }
-    }
-
     class NetworkReader : IEnumerable, IEnumerator
     {
         private int _lastHostNumber;

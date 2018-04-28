@@ -8,8 +8,8 @@
     <ProjectGuid>{D12B3AC2-F7A1-451D-A089-E3754FB00A8E}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Mp3Searcher</RootNamespace>
-    <AssemblyName>Preserved Head</AssemblyName>
+    <RootNamespace>Mp3Searcher.UI</RootNamespace>
+    <AssemblyName>Mp3Searcher</AssemblyName>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -89,7 +89,6 @@
     </Compile>
     <Compile Include="Model\FileSearcher.cs" />
     <Compile Include="Model\Id3Reader.cs" />
-    <Compile Include="Model\Mp3File.cs" />
     <Compile Include="Model\Mp3SearchEngine.cs" />
     <Compile Include="Model\NetworkReader.cs" />
     <Compile Include="Options.cs">
@@ -144,6 +143,12 @@
       <ProductName>Windows Installer 3.1</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PreservedHead.Core\Mp3Searcher.Core.csproj">
+      <Project>{1375cb07-29f4-445a-bce4-294c9b316ae5}</Project>
+      <Name>Mp3Searcher.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

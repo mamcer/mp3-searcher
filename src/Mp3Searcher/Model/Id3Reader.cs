@@ -1,3 +1,5 @@
+using Mp3Searcher.Core;
+
 namespace Mp3Searcher.Model
 {
     public class Id3Reader

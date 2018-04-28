@@ -1,4 +1,4 @@
-namespace Mp3Searcher.Model
+namespace Mp3Searcher.Core
 {
     public class Mp3File
     {

@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.IO;
+using Mp3Searcher.Core;
 
 namespace Mp3Searcher.Model
 {

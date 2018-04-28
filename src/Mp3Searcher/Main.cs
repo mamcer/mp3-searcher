@@ -2,6 +2,7 @@ using Mp3Searcher.Model;
 using System;
 using System.Diagnostics;
 using System.Windows.Forms;
+using Mp3Searcher.Core;
 
 namespace Mp3Searcher
 {
