@@ -43,7 +43,6 @@ namespace Mp3Searcher.UI
             this.searchTitleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.searchAlbumToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.searchArtistToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.lnkOptions = new System.Windows.Forms.LinkLabel();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -115,7 +114,6 @@ namespace Mp3Searcher.UI
             // 
             this.pnlSearch.Controls.Add(this.cmbSearchText);
             this.pnlSearch.Controls.Add(this.toolStrip);
-            this.pnlSearch.Controls.Add(this.lnkOptions);
             this.pnlSearch.Controls.Add(this.lnkFullScan);
             this.pnlSearch.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlSearch.Location = new System.Drawing.Point(0, 0);
@@ -180,19 +178,6 @@ namespace Mp3Searcher.UI
             this.searchArtistToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.searchArtistToolStripMenuItem.Text = "Search Artist";
             this.searchArtistToolStripMenuItem.Click += new System.EventHandler(this.searchArtistToolStripMenuItem_Click);
-            // 
-            // lnkOptions
-            // 
-            this.lnkOptions.AutoSize = true;
-            this.lnkOptions.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lnkOptions.Font = new System.Drawing.Font("Segoe UI", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lnkOptions.Location = new System.Drawing.Point(281, 45);
-            this.lnkOptions.Name = "lnkOptions";
-            this.lnkOptions.Size = new System.Drawing.Size(36, 12);
-            this.lnkOptions.TabIndex = 5;
-            this.lnkOptions.TabStop = true;
-            this.lnkOptions.Text = "Options";
-            this.lnkOptions.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkOptions_LinkClicked_1);
             // 
             // statusStrip
             // 
@@ -318,7 +303,6 @@ namespace Mp3Searcher.UI
         private System.Windows.Forms.ContextMenuStrip dataGridMenu;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem4;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
-        private System.Windows.Forms.LinkLabel lnkOptions;
         private System.Windows.Forms.ToolStrip toolStrip;
         private System.Windows.Forms.ToolStripSplitButton btnSearch;
         private System.Windows.Forms.ToolStripMenuItem searchTitleToolStripMenuItem;
