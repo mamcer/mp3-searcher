@@ -10,7 +10,6 @@ namespace Mp3Searcher.UI
     public partial class Main : Form
     {
         private bool _closeApplication;
-        private Options _options;
 
         private readonly NetworkService _networkService;
 
@@ -233,19 +232,6 @@ namespace Mp3Searcher.UI
             //        }
             //    }
             //}
-        }
-
-        private void lnkOptions_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            if (_options == null)
-            {
-                _options = new Options();
-            }
-
-            if (_options.ShowDialog() == DialogResult.OK)
-            {
-
-            }
         }
 
         private void toolStripSplitButton1_ButtonClick(object sender, EventArgs e)
