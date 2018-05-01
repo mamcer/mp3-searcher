@@ -14,6 +14,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mp3Searcher.Core", "src\Mp3
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mp3Searcher.UI", "src\Mp3Searcher.UI\Mp3Searcher.UI.csproj", "{D12B3AC2-F7A1-451D-A089-E3754FB00A8E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mp3Searcher.Data", "src\Mp3Searcher.Data\Mp3Searcher.Data.csproj", "{7190DA8F-5F30-46CE-B77C-7E3E80EA088A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -32,6 +34,10 @@ Global
 		{D12B3AC2-F7A1-451D-A089-E3754FB00A8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D12B3AC2-F7A1-451D-A089-E3754FB00A8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D12B3AC2-F7A1-451D-A089-E3754FB00A8E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7190DA8F-5F30-46CE-B77C-7E3E80EA088A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7190DA8F-5F30-46CE-B77C-7E3E80EA088A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7190DA8F-5F30-46CE-B77C-7E3E80EA088A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7190DA8F-5F30-46CE-B77C-7E3E80EA088A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

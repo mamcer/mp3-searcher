@@ -1,8 +1,10 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Mp3Searcher.Core
 {
+    [Table("Mp3File")]
     public class Mp3File
     {
         public Mp3File()
