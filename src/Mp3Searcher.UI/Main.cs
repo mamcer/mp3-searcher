@@ -12,10 +12,13 @@ namespace Mp3Searcher.UI
         private bool _closeApplication;
 
         private readonly NetworkService _networkService;
+        private readonly Mp3FileService _mp3FileService;
 
         public Main()
         {
             _networkService = new NetworkService();
+            _mp3FileService = new Mp3FileService();
+
             InitializeComponent();
         }
 
@@ -31,7 +34,6 @@ namespace Mp3Searcher.UI
                 notifyIcon.BalloonTipTitle = Text;
                 notifyIcon.BalloonTipText = "Full Scan started";
                 notifyIcon.ShowBalloonTip(3000);
-                //int filesAdded = _engine.FullScan();
                 var fileCount = 0;
 
                 var myIp = _networkService.GetMyIp();
@@ -61,7 +63,12 @@ namespace Mp3Searcher.UI
 
                                         if (fileExtension.ToLower(CultureInfo.InvariantCulture) == ".mp3")
                                         {
-                                            fileCount += 1;
+                                            var mp3File = _mp3FileService.GetMp3File(filePath);
+                                            if (mp3File != null)
+                                            {
+                                                _mp3FileService.SaveMp3File(mp3File);
+                                                fileCount += 1;
+                                            }
                                         }
                                     }
                                 }

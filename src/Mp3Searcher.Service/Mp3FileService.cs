@@ -65,5 +65,10 @@ namespace Mp3Searcher.Service
                 Bitrate = file.Properties.AudioBitrate
             };
         }
+
+        public void SaveMp3File(Mp3File mp3File)
+        {
+            // TODO: implement!
+        }
     }
 }
