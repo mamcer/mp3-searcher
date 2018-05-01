@@ -267,7 +267,7 @@ namespace Mp3Searcher.UI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(372, 66);
+            this.ClientSize = new System.Drawing.Size(372, 169);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlSearch);
             this.Controls.Add(this.statusStrip);

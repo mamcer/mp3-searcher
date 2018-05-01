@@ -87,10 +87,6 @@
     <Compile Include="Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
-    <Compile Include="Model\FileSearcher.cs" />
-    <Compile Include="Model\Id3Reader.cs" />
-    <Compile Include="Model\Mp3SearchEngine.cs" />
-    <Compile Include="Model\NetworkReader.cs" />
     <Compile Include="Options.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -148,6 +144,10 @@
     <ProjectReference Include="..\Mp3Searcher.Core\Mp3Searcher.Core.csproj">
       <Project>{1375cb07-29f4-445a-bce4-294c9b316ae5}</Project>
       <Name>Mp3Searcher.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mp3Searcher.Service\Mp3Searcher.Service.csproj">
+      <Project>{99F41EE0-44A8-4858-AE98-A2541C179FE9}</Project>
+      <Name>Mp3Searcher.Service</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

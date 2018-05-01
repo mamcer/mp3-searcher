@@ -16,8 +16,6 @@ namespace Mp3Searcher.UI
             lblAlbum.Text = mp3File.Album;
             lblArtist.Text = mp3File.Artist;
             lbTitle.Text = mp3File.Title;
-            lblHost.Text = mp3File.Host;
-            txtPath.Text = mp3File.Path;
         }
 
         private void button1_Click(object sender, EventArgs e)
