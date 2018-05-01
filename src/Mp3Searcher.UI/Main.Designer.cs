@@ -120,7 +120,7 @@ namespace Mp3Searcher.UI
             this.pnlSearch.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlSearch.Location = new System.Drawing.Point(0, 0);
             this.pnlSearch.Name = "pnlSearch";
-            this.pnlSearch.Size = new System.Drawing.Size(372, 67);
+            this.pnlSearch.Size = new System.Drawing.Size(373, 67);
             this.pnlSearch.TabIndex = 4;
             // 
             // cmbSearchText
@@ -218,7 +218,7 @@ namespace Mp3Searcher.UI
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 67);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(372, 100);
+            this.panel1.Size = new System.Drawing.Size(373, 100);
             this.panel1.TabIndex = 6;
             // 
             // dataGrid
@@ -236,7 +236,7 @@ namespace Mp3Searcher.UI
             this.dataGrid.Name = "dataGrid";
             this.dataGrid.ReadOnly = true;
             this.dataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGrid.Size = new System.Drawing.Size(372, 100);
+            this.dataGrid.Size = new System.Drawing.Size(373, 100);
             this.dataGrid.TabIndex = 4;
             this.dataGrid.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGrid_CellDoubleClick);
             // 
@@ -267,7 +267,7 @@ namespace Mp3Searcher.UI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(372, 169);
+            this.ClientSize = new System.Drawing.Size(373, 64);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlSearch);
             this.Controls.Add(this.statusStrip);
@@ -276,7 +276,7 @@ namespace Mp3Searcher.UI
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Preserved Head";
+            this.Text = "Mp3 Searcher";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Shown += new System.EventHandler(this.Form1_Shown);
