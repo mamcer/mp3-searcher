@@ -9,21 +9,10 @@ namespace Mp3Searcher.Data
 
         public EntityFrameworkRepository(DbContext dbContext)
         {
-            if (dbContext == null)
-            {
-                throw new ArgumentNullException("dbContext");
-            }
-
-            _dbContext = dbContext;
+            _dbContext = dbContext ?? throw new ArgumentNullException("dbContext");
         }
 
-        protected DbContext DbContext
-        {
-            get
-            {
-                return _dbContext;
-            }
-        }
+        protected DbContext DbContext => _dbContext;
 
         public void Create(TEntity entity)
         {

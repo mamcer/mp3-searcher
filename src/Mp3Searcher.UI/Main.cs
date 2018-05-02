@@ -66,7 +66,15 @@ namespace Mp3Searcher.UI
                                             var mp3File = _mp3FileService.GetMp3File(filePath);
                                             if (mp3File != null)
                                             {
-                                                _mp3FileService.SaveMp3File(mp3File);
+                                                if (_mp3FileService.Mp3FileExists(mp3File))
+                                                {
+                                                    _mp3FileService.UpdateMp3File(mp3File);
+                                                }
+                                                else
+                                                {
+                                                    _mp3FileService.SaveMp3File(mp3File);
+                                                }
+                                            
                                                 fileCount += 1;
                                             }
                                         }

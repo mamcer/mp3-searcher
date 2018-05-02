@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using Mp3Searcher.Core;
+using Mp3Searcher.Data;
 
 namespace Mp3Searcher.Service
 {
@@ -66,9 +67,29 @@ namespace Mp3Searcher.Service
             };
         }
 
+        public void UpdateMp3File(Mp3File mp3File)
+        {
+            var dbContext = new Mp3SearcherEntities();
+            var unitOfWork = new EntityFrameworkUnitOfWork(dbContext);
+            var mp3FileRepository = new Mp3FileRepository(dbContext);
+            mp3FileRepository.Update(mp3File);
+            unitOfWork.SaveChanges();
+        }        
+
         public void SaveMp3File(Mp3File mp3File)
         {
-            // TODO: implement!
+            var dbContext = new Mp3SearcherEntities();
+            var unitOfWork = new EntityFrameworkUnitOfWork(dbContext);
+            var mp3FileRepository = new Mp3FileRepository(dbContext);
+            mp3FileRepository.Create(mp3File);
+            unitOfWork.SaveChanges();
+        }
+
+        public bool Mp3FileExists(Mp3File mp3File)
+        {
+            var dbContext = new Mp3SearcherEntities();
+            var mp3FileRepository = new Mp3FileRepository(dbContext);
+            return mp3FileRepository.Exists(mp3File);
         }
     }
 }

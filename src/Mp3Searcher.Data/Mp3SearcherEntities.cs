@@ -9,19 +9,8 @@ namespace Mp3Searcher.Data
         {
         }
 
-        public virtual DbSet<Mp3File> Mp3File { get; set; }
+        public virtual DbSet<Mp3File> Mp3Files { get; set; }
 
         public virtual DbSet<Mp3FileLocation> Mp3FileLocations { get; set; }
-
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        {
-            modelBuilder
-                .Entity<Mp3File>()
-                .HasMany(mc => mc.FileLocations)
-                .WithRequired()
-                .WillCascadeOnDelete(true);
-            
-            base.OnModelCreating(modelBuilder);
-        }
     }
 }
