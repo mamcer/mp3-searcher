@@ -5,7 +5,7 @@ using System.Net.Sockets;
 
 namespace Mp3Searcher.Service
 {
-    public class NetworkService
+    public class NetworkService : INetworkService
     {
         public byte[] GetMyIp()
         {

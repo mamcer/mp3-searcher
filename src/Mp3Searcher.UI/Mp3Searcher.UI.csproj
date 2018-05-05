@@ -139,6 +139,14 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Common\CrossCutting.Core\CrossCutting.Core.csproj">
+      <Project>{c9213684-eab1-4c17-9313-534709c4fcb6}</Project>
+      <Name>CrossCutting.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Common\CrossCutting.MainModule\CrossCutting.MainModule.csproj">
+      <Project>{cd7c9e78-0d7c-4b4e-8e5d-59459360b1b7}</Project>
+      <Name>CrossCutting.MainModule</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Mp3Searcher.Core\Mp3Searcher.Core.csproj">
       <Project>{1375cb07-29f4-445a-bce4-294c9b316ae5}</Project>
       <Name>Mp3Searcher.Core</Name>

@@ -1,12 +1,24 @@
 ﻿using System;
 using System.IO;
+using CrossCutting.Core.Logging;
 using Mp3Searcher.Core;
 using Mp3Searcher.Data;
 
 namespace Mp3Searcher.Service
 {
-    public class Mp3FileService
+    public class Mp3FileService : IMp3FileService
     {
+        private readonly IMp3FileRepository _mp3FileRepository;
+        private readonly IUnitOfWork _unitOfWork;
+        private readonly ILogService _logService;
+
+        public Mp3FileService(IUnitOfWork unitOfWork, IMp3FileRepository mp3FileRepository, ILogService logService)
+        {
+            _unitOfWork = unitOfWork;
+            _mp3FileRepository = mp3FileRepository;
+            _logService = logService;
+        }
+
         public Mp3File GetMp3File(string path)
         {
             TagLib.File file = TagLib.File.Create(path);
@@ -69,27 +81,44 @@ namespace Mp3Searcher.Service
 
         public void UpdateMp3File(Mp3File mp3File)
         {
-            var dbContext = new Mp3SearcherEntities();
-            var unitOfWork = new EntityFrameworkUnitOfWork(dbContext);
-            var mp3FileRepository = new Mp3FileRepository(dbContext);
-            mp3FileRepository.Update(mp3File);
-            unitOfWork.SaveChanges();
-        }        
+            try
+            {
+                _mp3FileRepository.Update(mp3File);
+                _unitOfWork.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                _logService.Error(e);
+                throw;
+            }
+        }
 
         public void SaveMp3File(Mp3File mp3File)
         {
-            var dbContext = new Mp3SearcherEntities();
-            var unitOfWork = new EntityFrameworkUnitOfWork(dbContext);
-            var mp3FileRepository = new Mp3FileRepository(dbContext);
-            mp3FileRepository.Create(mp3File);
-            unitOfWork.SaveChanges();
+            try
+            {
+
+                _mp3FileRepository.Create(mp3File);
+                _unitOfWork.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                _logService.Error(e);
+                throw;
+            }
         }
 
         public bool Mp3FileExists(Mp3File mp3File)
         {
-            var dbContext = new Mp3SearcherEntities();
-            var mp3FileRepository = new Mp3FileRepository(dbContext);
-            return mp3FileRepository.Exists(mp3File);
+            try
+            {
+                return _mp3FileRepository.Exists(mp3File);
+            }
+            catch (Exception e)
+            {
+                _logService.Error(e);
+                throw;
+            }
         }
     }
 }

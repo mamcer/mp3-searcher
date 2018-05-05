@@ -53,6 +53,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IMp3FileService.cs" />
+    <Compile Include="INetworkService.cs" />
     <Compile Include="Mp3FileService.cs" />
     <Compile Include="NetworkService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -62,6 +64,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Common\CrossCutting.Core\CrossCutting.Core.csproj">
+      <Project>{c9213684-eab1-4c17-9313-534709c4fcb6}</Project>
+      <Name>CrossCutting.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Mp3Searcher.Core\Mp3Searcher.Core.csproj">
       <Project>{1375CB07-29F4-445A-BCE4-294C9B316AE5}</Project>
       <Name>Mp3Searcher.Core</Name>

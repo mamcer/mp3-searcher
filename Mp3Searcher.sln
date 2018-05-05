@@ -16,6 +16,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mp3Searcher.UI", "src\Mp3Se
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mp3Searcher.Data", "src\Mp3Searcher.Data\Mp3Searcher.Data.csproj", "{7190DA8F-5F30-46CE-B77C-7E3E80EA088A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrossCutting.Core", "src\Common\CrossCutting.Core\CrossCutting.Core.csproj", "{C9213684-EAB1-4C17-9313-534709C4FCB6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrossCutting.MainModule", "src\Common\CrossCutting.MainModule\CrossCutting.MainModule.csproj", "{CD7C9E78-0D7C-4B4E-8E5D-59459360B1B7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -38,6 +42,14 @@ Global
 		{7190DA8F-5F30-46CE-B77C-7E3E80EA088A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7190DA8F-5F30-46CE-B77C-7E3E80EA088A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7190DA8F-5F30-46CE-B77C-7E3E80EA088A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9213684-EAB1-4C17-9313-534709C4FCB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9213684-EAB1-4C17-9313-534709C4FCB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9213684-EAB1-4C17-9313-534709C4FCB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9213684-EAB1-4C17-9313-534709C4FCB6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD7C9E78-0D7C-4B4E-8E5D-59459360B1B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD7C9E78-0D7C-4B4E-8E5D-59459360B1B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD7C9E78-0D7C-4B4E-8E5D-59459360B1B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD7C9E78-0D7C-4B4E-8E5D-59459360B1B7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

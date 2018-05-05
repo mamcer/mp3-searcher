@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Windows.Forms;
+using CrossCutting.MainModule.IOC;
 using Mp3Searcher.Service;
 
 namespace Mp3Searcher.UI
@@ -11,13 +12,11 @@ namespace Mp3Searcher.UI
     {
         private bool _closeApplication;
 
-        private readonly NetworkService _networkService;
-        private readonly Mp3FileService _mp3FileService;
+        private readonly IocUnityContainer _container;
 
         public Main()
         {
-            _networkService = new NetworkService();
-            _mp3FileService = new Mp3FileService();
+            _container = new IocUnityContainer();
 
             InitializeComponent();
         }
@@ -36,7 +35,9 @@ namespace Mp3Searcher.UI
                 notifyIcon.ShowBalloonTip(3000);
                 var fileCount = 0;
 
-                var myIp = _networkService.GetMyIp();
+                var networkService = _container.Resolve<INetworkService>();
+                var mp3FileService = _container.Resolve<IMp3FileService>();
+                var myIp = networkService.GetMyIp();
                 if (myIp != null)
                 {
                     var myNetworkIp = $"{myIp[0]}.{myIp[1]}.{myIp[2]}";
@@ -45,7 +46,7 @@ namespace Mp3Searcher.UI
                         if (i == myIp[3])
                         {
                             var serverIp = $"{myNetworkIp}.{i}";
-                            var shareList = _networkService.GetNetworkShareFoldersList(serverIp);
+                            var shareList = networkService.GetNetworkShareFoldersList(serverIp);
 
                             foreach (var share in shareList)
                             {
@@ -63,16 +64,16 @@ namespace Mp3Searcher.UI
 
                                         if (fileExtension.ToLower(CultureInfo.InvariantCulture) == ".mp3")
                                         {
-                                            var mp3File = _mp3FileService.GetMp3File(filePath);
+                                            var mp3File = mp3FileService.GetMp3File(filePath);
                                             if (mp3File != null)
                                             {
-                                                if (_mp3FileService.Mp3FileExists(mp3File))
+                                                if (mp3FileService.Mp3FileExists(mp3File))
                                                 {
-                                                    _mp3FileService.UpdateMp3File(mp3File);
+                                                    mp3FileService.UpdateMp3File(mp3File);
                                                 }
                                                 else
                                                 {
-                                                    _mp3FileService.SaveMp3File(mp3File);
+                                                    mp3FileService.SaveMp3File(mp3File);
                                                 }
                                             
                                                 fileCount += 1;
