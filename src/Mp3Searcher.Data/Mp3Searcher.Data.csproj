@@ -46,6 +46,10 @@
     <Compile Include="IMp3FileRepository.cs" />
     <Compile Include="IRepository.cs" />
     <Compile Include="IUnitOfWork.cs" />
+    <Compile Include="Migrations\201805052109599_Initial.cs" />
+    <Compile Include="Migrations\201805052109599_Initial.Designer.cs">
+      <DependentUpon>201805052109599_Initial.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Mp3FileRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -60,6 +64,11 @@
       <Project>{1375cb07-29f4-445a-bce4-294c9b316ae5}</Project>
       <Name>Mp3Searcher.Core</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201805052109599_Initial.resx">
+      <DependentUpon>201805052109599_Initial.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

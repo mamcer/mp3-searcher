@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Mp3Searcher.Core
@@ -14,14 +15,19 @@ namespace Mp3Searcher.Core
 
         public int Id { get; set; }
 
+        [Required]
+        [MaxLength(255)]
         public string Title { get; set; }
 
+        [MaxLength(255)]
         public string Album { get; set; }
 
+        [MaxLength(255)]
         public string Artist { get; set; }
 
         public int Year { get; set; }
 
+        [MaxLength(255)]
         public string Genre { get; set; }
 
         public TimeSpan Duration { get; set; }

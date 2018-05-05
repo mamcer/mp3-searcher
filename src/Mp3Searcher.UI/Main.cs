@@ -42,7 +42,7 @@ namespace Mp3Searcher.UI
                     var myNetworkIp = $"{myIp[0]}.{myIp[1]}.{myIp[2]}";
                     for (int i = 0; i < 255; i++)
                     {
-                        if (i != myIp[3])
+                        if (i == myIp[3])
                         {
                             var serverIp = $"{myNetworkIp}.{i}";
                             var shareList = _networkService.GetNetworkShareFoldersList(serverIp);

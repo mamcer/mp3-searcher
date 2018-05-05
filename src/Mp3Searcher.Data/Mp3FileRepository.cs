@@ -12,7 +12,9 @@ namespace Mp3Searcher.Data
 
         public bool Exists(Mp3File mp3File)
         {
-            return DbContext.Set<Mp3File>().Any(m => m.Equals(mp3File));
+            return _dbContext.Set<Mp3File>().Any(m => m.Title == mp3File.Title);
+
+            //return _dbContext.Set<Mp3File>().Any(m => m.Equals(mp3File));
         }
     }
 }
