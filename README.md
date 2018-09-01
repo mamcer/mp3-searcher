@@ -7,9 +7,9 @@ In `original` branch you will find the original source code for this application
 
 ## Description 
 
-It's a simple program who look for .mp3 files shared in an intranet (Windows share). The files found are indexed and stored in a SQL Server database. Then you can search by title, author or album and play the files.
+Mp3Searcher is a simple program that look for .mp3 files shared in an intranet (Windows share). The files found are indexed and stored in a SQL Server database. Then you can search by title, author or album and play the files.
 
-Originally created in Visual Studio 2005 and then migrated to Visual Studio 2008. No Source Control.
+Originally created in Visual Studio 2005 and then migrated to Visual Studio 2008. Not included in any source control at that time.
 
 ## Screenshot
 
