@@ -70,30 +70,31 @@ namespace Mp3Searcher.UI
             // 
             // notifyMenu
             // 
+            this.notifyMenu.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.notifyMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem1,
             this.toolStripSeparator1,
             this.toolStripMenuItem2});
             this.notifyMenu.Name = "notifyMenu";
-            this.notifyMenu.Size = new System.Drawing.Size(105, 54);
+            this.notifyMenu.Size = new System.Drawing.Size(116, 58);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(104, 22);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(115, 24);
             this.toolStripMenuItem1.Text = "Open";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(101, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(112, 6);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(104, 22);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(115, 24);
             this.toolStripMenuItem2.Text = "Exit";
             this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
             // 
@@ -104,7 +105,7 @@ namespace Mp3Searcher.UI
             this.lnkFullScan.Font = new System.Drawing.Font("Segoe UI", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lnkFullScan.Location = new System.Drawing.Point(326, 45);
             this.lnkFullScan.Name = "lnkFullScan";
-            this.lnkFullScan.Size = new System.Drawing.Size(39, 12);
+            this.lnkFullScan.Size = new System.Drawing.Size(54, 15);
             this.lnkFullScan.TabIndex = 2;
             this.lnkFullScan.TabStop = true;
             this.lnkFullScan.Text = "Full Scan";
@@ -126,7 +127,7 @@ namespace Mp3Searcher.UI
             this.cmbSearchText.FormattingEnabled = true;
             this.cmbSearchText.Location = new System.Drawing.Point(3, 14);
             this.cmbSearchText.Name = "cmbSearchText";
-            this.cmbSearchText.Size = new System.Drawing.Size(262, 21);
+            this.cmbSearchText.Size = new System.Drawing.Size(262, 27);
             this.cmbSearchText.TabIndex = 7;
             this.cmbSearchText.TextChanged += new System.EventHandler(this.cmbSearchText_TextChanged);
             this.cmbSearchText.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbSearchText_KeyDown);
@@ -136,13 +137,14 @@ namespace Mp3Searcher.UI
             this.toolStrip.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.toolStrip.Dock = System.Windows.Forms.DockStyle.None;
             this.toolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.toolStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.toolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnSearch});
             this.toolStrip.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
             this.toolStrip.Location = new System.Drawing.Point(268, 12);
             this.toolStrip.Name = "toolStrip";
             this.toolStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.toolStrip.Size = new System.Drawing.Size(103, 25);
+            this.toolStrip.Size = new System.Drawing.Size(128, 27);
             this.toolStrip.TabIndex = 6;
             // 
             // btnSearch
@@ -154,33 +156,34 @@ namespace Mp3Searcher.UI
             this.btnSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.Image")));
             this.btnSearch.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(100, 22);
+            this.btnSearch.Size = new System.Drawing.Size(125, 24);
             this.btnSearch.Text = "Search Title";
             this.btnSearch.ButtonClick += new System.EventHandler(this.toolStripSplitButton1_ButtonClick);
             // 
             // searchTitleToolStripMenuItem
             // 
             this.searchTitleToolStripMenuItem.Name = "searchTitleToolStripMenuItem";
-            this.searchTitleToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.searchTitleToolStripMenuItem.Size = new System.Drawing.Size(176, 26);
             this.searchTitleToolStripMenuItem.Text = "Search Title";
             this.searchTitleToolStripMenuItem.Click += new System.EventHandler(this.searchTitleToolStripMenuItem_Click);
             // 
             // searchAlbumToolStripMenuItem
             // 
             this.searchAlbumToolStripMenuItem.Name = "searchAlbumToolStripMenuItem";
-            this.searchAlbumToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.searchAlbumToolStripMenuItem.Size = new System.Drawing.Size(176, 26);
             this.searchAlbumToolStripMenuItem.Text = "Search Album";
             this.searchAlbumToolStripMenuItem.Click += new System.EventHandler(this.searchAlbumToolStripMenuItem_Click);
             // 
             // searchArtistToolStripMenuItem
             // 
             this.searchArtistToolStripMenuItem.Name = "searchArtistToolStripMenuItem";
-            this.searchArtistToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.searchArtistToolStripMenuItem.Size = new System.Drawing.Size(176, 26);
             this.searchArtistToolStripMenuItem.Text = "Search Artist";
             this.searchArtistToolStripMenuItem.Click += new System.EventHandler(this.searchArtistToolStripMenuItem_Click);
             // 
             // statusStrip
             // 
+            this.statusStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1});
             this.statusStrip.Location = new System.Drawing.Point(0, 44);
@@ -194,7 +197,7 @@ namespace Mp3Searcher.UI
             // toolStripStatusLabel1
             // 
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(118, 17);
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(151, 17);
             this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
             // 
             // panel1
@@ -227,30 +230,31 @@ namespace Mp3Searcher.UI
             // 
             // dataGridMenu
             // 
+            this.dataGridMenu.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.dataGridMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem4,
             this.toolStripMenuItem3});
             this.dataGridMenu.Name = "dataGridMenu";
-            this.dataGridMenu.Size = new System.Drawing.Size(118, 48);
+            this.dataGridMenu.Size = new System.Drawing.Size(134, 52);
             // 
             // toolStripMenuItem4
             // 
             this.toolStripMenuItem4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-            this.toolStripMenuItem4.Size = new System.Drawing.Size(117, 22);
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(133, 24);
             this.toolStripMenuItem4.Text = "Play file";
             this.toolStripMenuItem4.Click += new System.EventHandler(this.toolStripMenuItem4_Click);
             // 
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(117, 22);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(133, 24);
             this.toolStripMenuItem3.Text = "File Info";
             this.toolStripMenuItem3.Click += new System.EventHandler(this.toolStripMenuItem3_Click);
             // 
             // Main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(373, 64);
             this.Controls.Add(this.panel1);
